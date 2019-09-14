@@ -207,3 +207,13 @@ public class OauthRefeshToken {
     @Column(name="authentication",columnDefinition = "MEDIUMBLOB")
     private byte[] authentication;
 }
+
+OAUTH SERVER CONFIG ANNOTATION FOR TOKEN EXPIRAION :
+
+ @Autowired
+    private DataSource dataSource;
+ 
+    @Bean
+    public TokenStore tokenStore() {
+        return new JdbcTokenStore(dataSource);
+    }
